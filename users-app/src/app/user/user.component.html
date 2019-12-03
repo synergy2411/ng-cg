@@ -1,7 +1,15 @@
 <ul class="list-unstyled">
-  <li class="card">
+  <li class="card"
+  *ngFor="let user of users; index as i; first as isFirst;last as isLast; even as isEven; odd as isOdd;">
     <div class="row card-body">
       <div class="col-sm-3 col-md-3">
+        <p>
+          index : {{ i }} <br>
+          is this first ? : {{ isFirst }} <br>
+          is this last ? : {{ isLast }} <br>
+          is this Even ? : {{ isEven }} <br>
+          is this Odd ? : {{ isOdd }}
+        </p>
         <app-user-image [user] = "user" (childEvent) = "onInfo($event)"></app-user-image>
       </div>
 
@@ -15,3 +23,4 @@
     </div>
   </li>
 </ul>
+

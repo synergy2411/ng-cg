@@ -5,11 +5,22 @@
   {{ user.firstName }}
   <span [innerHTML]="user.lastName"></span>
 </h2>
-<p>Date of Birth : {{ user.dob }}</p>
+
+
+<!-- <p [ngClass]="['my-border', 'feature']">Date of Birth : {{ user.dob }}</p> -->
+<!-- <p [ngClass]="{'my-border' : true, 'feature' : false}">Date of Birth : {{ user.dob }}</p> -->
+
+<p [ngClass]="dynamicClasses">
+  Date of Birth : {{ user.dob }} <br>
+  <button type="button" class="btn btn-default btn-sm" (click) = "onToggle()">
+    Toggle Class
+  </button>
+</p>
 
 <ng-content select=".main-content"></ng-content>
 
-<p>Income : {{ user.income }}</p>
+<p [ngStyle] = "{'color' : 'red', 'font-size' : '1.2em' }">Income : {{ user.income }}</p>
+
 <p>Total Votes : {{ user.vote }}
   <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
   <input type="text" [(ngModel)]="user.vote">
