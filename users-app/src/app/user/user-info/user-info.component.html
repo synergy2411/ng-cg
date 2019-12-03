@@ -1,0 +1,11 @@
+<h2>
+  <!-- <span [innerHTML]="user.firstName"></span> -->
+  {{ user.firstName }}
+  <span [innerHTML]="user.lastName"></span>
+</h2>
+<p>Date of Birth : {{ user.dob }}</p>
+<p>Income : {{ user.income }}</p>
+<p>Total Votes : {{ user.vote }}
+  <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
+  <input type="text" [(ngModel)]="user.vote">
+</p>

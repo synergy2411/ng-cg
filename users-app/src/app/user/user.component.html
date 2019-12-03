@@ -2,27 +2,11 @@
   <li class="card">
     <div class="row card-body">
       <div class="col-sm-3 col-md-3">
-        <img [src]="user.image" alt="" class="img-float ing-rounded">
-        <br>
-        <button class="btn btn-default btn-block" (click)="onMoreInfo(user)">
-          More Info
-        </button>
+        <app-user-image [user] = "user" (childEvent) = "onInfo($event)"></app-user-image>
       </div>
 
       <div class="col-sm-9 col-md-9">
-        <h2>
-          <!-- <span [innerHTML]="user.firstName"></span> -->
-          {{ user.firstName }}
-          <span [innerHTML]="user.lastName"></span>
-        </h2>
-        <p>Date of Birth : {{ user.dob }}</p>
-        <p>Income : {{ user.income }}</p>
-        <p>Total Votes : {{ user.vote }}
-          <input type="number" [value] = "user.vote"
-            (change)="user.vote = $event.target.value">
-
-          <input type="text" [(ngModel)] = "user.vote">
-        </p>
+        <app-user-info [user] = "user"></app-user-info>
       </div>
     </div>
   </li>
