@@ -1,6 +1,6 @@
-<ng-content select = "header"></ng-content>
+<!-- <ng-content select = "header"></ng-content> -->
 
-<h2>
+<h2 appHighlight>
   <!-- <span [innerHTML]="user.firstName"></span> -->
   {{ user.firstName }}
   <span [innerHTML]="user.lastName"></span>
@@ -17,13 +17,18 @@
   </button>
 </p>
 
-<ng-content select=".main-content"></ng-content>
+<!-- <ng-content select=".main-content"></ng-content> -->
 
-<p [ngStyle] = "{'color' : 'red', 'font-size' : '1.2em' }">Income : {{ user.income }}</p>
+<p *ngIf="user.isWorking; else elseTemplate" [ngStyle] = "{'color' : 'red'}">
+  Income : {{ user.income }}</p>
 
 <p>Total Votes : {{ user.vote }}
   <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">
   <input type="text" [(ngModel)]="user.vote">
 </p>
 
-<ng-content select = "footer"></ng-content>
+<!-- <ng-content select = "footer"></ng-content> -->
+
+<ng-template #elseTemplate>
+  <p>Mr. {{ user.lastName }} is NOT working now!</p>
+</ng-template>
