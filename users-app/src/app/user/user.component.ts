@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, Input, OnInit, DoCheck, AfterContentInit,
+    AfterContentChecked, AfterViewInit, AfterViewChecked,
+    OnDestroy, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-user',
@@ -7,7 +9,9 @@ import { Component } from '@angular/core';
   // `
   templateUrl: './user.component.html'
 })
-export class UserComponent {
+export class UserComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy{
+  @Input('title') title : string;
+
   user = {
     firstName: "Bill",
     lastName: "Gates",
@@ -22,4 +26,15 @@ export class UserComponent {
   onInfo(user: any) {
     alert(`Mr. ${user.firstName} is working with ${user.company}!!!!`);
   }
+
+  ngOnChanges(change : SimpleChanges){
+    console.log("ngOnChanges", change);
+  }
+  ngOnInit(){console.log("ngOnInit");}
+  ngDoCheck(){console.log("ngDoCheck");}
+  ngAfterContentInit(){console.log("ngAfterContentInit");}
+  ngAfterContentChecked(){console.log("ngAfterContentChecked");}
+  ngAfterViewInit(){console.log("ngAfterViewInit");}
+  ngAfterViewChecked(){console.log("ngAfterViewChecked");}
+  ngOnDestroy(){console.log("ngOnDestroy");}
 }

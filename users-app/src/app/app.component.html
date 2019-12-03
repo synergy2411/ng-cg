@@ -1,5 +1,12 @@
 <h1>Hola World!!</h1>
 
 <div class="container">
-  <app-user></app-user>
+  <input type="text" [(ngModel)] = "title">
+  <br>
+  <button (click)= "showUser = !showUser"
+    class="btn btn-default">Toggle User</button>
+</div>
+
+<div class="container" *ngIf="showUser">
+  <app-user [title]="title"></app-user>
 </div>
