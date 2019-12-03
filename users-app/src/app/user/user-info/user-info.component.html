@@ -2,8 +2,8 @@
 
 <h2 appHighlight [myColor]="'yellow'">
   <!-- <span [innerHTML]="user.firstName"></span> -->
-  {{ user.firstName }}
-  <span [innerHTML]="user.lastName"></span>
+  {{ user.firstName | uppercase}}
+  <span [innerHTML]="user.lastName | uppercase"></span>
 </h2>
 
 
@@ -11,7 +11,7 @@
 <!-- <p [ngClass]="{'my-border' : true, 'feature' : false}">Date of Birth : {{ user.dob }}</p> -->
 
 <p [ngClass]="dynamicClasses">
-  Date of Birth : {{ user.dob }} <br>
+  Date of Birth : {{ user.dob | date : 'dd/MM/yyyy' }} <br>
   <button type="button" class="btn btn-default btn-sm" (click) = "onToggle()">
     Toggle Class
   </button>
@@ -20,7 +20,7 @@
 <!-- <ng-content select=".main-content"></ng-content> -->
 
 <p *ngIf="user.isWorking; else elseTemplate" [ngStyle] = "{'color' : 'red'}">
-  Income : {{ user.income }}</p>
+  Income : {{ user.income | currency : 'EUR' }}</p>
 
 <p>Total Votes : {{ user.vote }}
   <input type="number" [value]="user.vote" (change)="user.vote = $event.target.value">

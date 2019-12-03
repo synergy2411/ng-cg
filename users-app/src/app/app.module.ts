@@ -7,6 +7,9 @@ import { UserComponent } from './user/user.component';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { HighlightDirective } from './directives/highlight.directive';
+import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
+import { NationalCodePipe } from './pipes/nationalcode.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [         // components, directives, pipes
@@ -14,7 +17,10 @@ import { HighlightDirective } from './directives/highlight.directive';
     UserComponent,
     UserImageComponent,
     UserInfoComponent,
-    HighlightDirective
+    HighlightDirective,
+    PipeDemoComponent,
+    NationalCodePipe,
+    FilterPipe
   ],
   imports: [              // to import & register all modules
     BrowserModule,

@@ -1,0 +1,56 @@
+<p class="display-4">
+  Promise Data : {{ promise | async | uppercase}}
+
+  <br>
+  Contact Number : {{ contact_number | nationalcode }}
+</p>
+
+<hr>
+
+<form>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <label for="label">Label : </label>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <input type="text" name="label" [(ngModel)]="newTodoLabel">
+      </div>
+
+    </div>
+
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-6 col-md-6">
+        <label for="label">Status : </label>
+      </div>
+      <div class="col-sm-6 col-md-6">
+        <input type="text" name="label" [(ngModel)]="newTodoStatus">
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="row">
+  <div class="col-sm-6 col-md-6">
+    <button class="btn btn-outline-primary btn-block" (click)="onAddNewItem()">
+      Add New Item
+    </button>
+  </div>
+  <div class="col-sm-6 col-md-6">
+    <select name="status" [(ngModel)]="filteredStatus" class="form-control">
+      <option value="done">Done Task</option>
+      <option value="pending">Pending Task</option>
+    </select>
+  </div>
+</div>
+<br>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let todo of todos | filter : filteredStatus">
+    {{todo.label | uppercase}}
+    <span class="badge badge-dark float-right">
+      {{ todo.status }}
+    </span>
+  </li>
+</ul>
