@@ -4,6 +4,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { PipeDemoComponent } from './pipe-demo/pipe-demo.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { UserComponent } from './user/user.component';
+import { LoginGaurdService } from './services/login-gaurd.service';
 
 export const APP_ROUTES: Routes = [{
   path: "",                              // http://localhost:4200 > http://localhost:4200/login
@@ -23,7 +24,8 @@ export const APP_ROUTES: Routes = [{
   component: ObservableDemoComponent
 }, {
   path: "user",                          // http://localhost:4200/user
-  component: UserComponent
+  component: UserComponent,
+  canActivate: [LoginGaurdService]
 }, {
   path: "**",                            // http://localhost:4200/notExist > // http://localhost:4200/login
   redirectTo: "login",
