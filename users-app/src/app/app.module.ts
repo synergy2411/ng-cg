@@ -15,6 +15,7 @@ import { UserInfoComponent } from './user/user-info/user-info.component';
 import { UserComponent } from './user/user.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { LoggerInterceptorService } from './services/logger-interceptor.service';
 
 
 @NgModule({
@@ -41,6 +42,10 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     {
       provide : HTTP_INTERCEPTORS,
       useClass : AuthInterceptorService,
+      multi : true
+    },{
+      provide : HTTP_INTERCEPTORS,
+      useClass : LoggerInterceptorService,
       multi : true
     }
   ],          // services
