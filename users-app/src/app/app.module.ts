@@ -13,6 +13,7 @@ import { NationalCodePipe } from './pipes/nationalcode.pipe';
 import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { UserComponent } from './user/user.component';
+import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { UserComponent } from './user/user.component';
     NationalCodePipe,
     FilterPipe,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ObservableDemoComponent
   ],
   imports: [              // to import & register all modules
     BrowserModule,
