@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -14,6 +14,7 @@ import { UserImageComponent } from './user/user-image/user-image.component';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { UserComponent } from './user/user.component';
 import { ObservableDemoComponent } from './observable-demo/observable-demo.component';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 
 @NgModule({
@@ -36,7 +37,13 @@ import { ObservableDemoComponent } from './observable-demo/observable-demo.compo
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],          // services
+  providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass : AuthInterceptorService,
+      multi : true
+    }
+  ],          // services
   bootstrap: [AppComponent]         //
 })
 export class AppModule { }
