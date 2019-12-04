@@ -4,7 +4,8 @@ import {
   OnDestroy, SimpleChanges
 } from '@angular/core';
 import { User } from '../model/user';
-import { USER_DATA } from '../model/mocks';
+import { DataService } from '../services/data.service';
+// import { USER_DATA } from '../model/mocks';
 
 @Component({
   selector: 'app-user',
@@ -19,15 +20,11 @@ export class UserComponent implements OnChanges, OnInit, DoCheck, AfterContentIn
     alert(`Mr. ${user.firstName} is working with ${user.company}!!!!`);
   }
 
-  constructor(){
-    // this.user = USER_DATA;
-  }
-  ngOnChanges(change: SimpleChanges) {
-    // console.log("ngOnChanges", change);
-  }
+  constructor(private dataService : DataService){ }
+  ngOnChanges(change: SimpleChanges) {}
   ngOnInit() {
-    // console.log("ngOnInit", USER_DATA);
-    this.users = USER_DATA;
+    // this.users = USER_DATA;
+    this.users = this.dataService.getData();
   }
   ngDoCheck() {
     // console.log("ngDoCheck");

@@ -12,6 +12,7 @@ import { NationalCodePipe } from './pipes/nationalcode.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [         // components, directives, pipes
