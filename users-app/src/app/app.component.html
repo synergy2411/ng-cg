@@ -6,7 +6,7 @@
 
   <app-login></app-login>
 
-  <br>  
+  <br>
   <app-register></app-register>
 
 
@@ -36,5 +36,5 @@
 </div>
 <br><hr>
 <div class="container" *ngIf="showUser">
-  <app-user [title]="title"></app-user>
+  <app-user [title]="title" *ngIf="authService.isAuthenticated()"></app-user>
 </div>
