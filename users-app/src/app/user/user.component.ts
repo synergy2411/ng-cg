@@ -9,22 +9,31 @@ import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-user',
-  templateUrl: './user.component.html'
+  templateUrl: './user.component.html',
+  // providers :   [DataService]
 })
 export class UserComponent implements OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
   @Input('title') title: string;
 
-  users : User[];
+  users: User[];
 
   onInfo(user: User) {
     alert(`Mr. ${user.firstName} is working with ${user.company}!!!!`);
   }
 
-  constructor(private dataService : DataService){ }
-  ngOnChanges(change: SimpleChanges) {}
+  constructor(public dataService: DataService) { }
+
+  onIncrease(){
+    this.dataService.counter++;
+  }
+
+  ngOnChanges(change: SimpleChanges) { }
+
   ngOnInit() {
     // this.users = USER_DATA;
-    this.users = this.dataService.getData();
+    this.dataService.getData().subscribe(
+      response => this.users = <User[]>response['userdata']
+      )
   }
   ngDoCheck() {
     // console.log("ngDoCheck");

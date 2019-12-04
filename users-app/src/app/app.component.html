@@ -17,6 +17,17 @@
   <br>
   <button (click)= "showUser = !showUser"
     class="btn btn-default">Toggle User</button>
+
+    <br>
+    <br>
+    <!--
+      Showing service instance is Singleton
+      <p>Counter Value in App : {{ dataService.counter }}
+
+      <button class="btn btn-default"
+        (click)="onIncreases()">Increase</button>
+    </p> -->
+
 </div>
 <br><hr>
 <div class="container" *ngIf="showUser">
