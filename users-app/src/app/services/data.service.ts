@@ -7,11 +7,11 @@ import { HttpClient } from '@angular/common/http';
   providedIn : 'root'
 })
 export class DataService{
-  private users : User[] = [];
+  // private users : User[] = [];
   counter : number = 0;
 
   constructor(private httpClient : HttpClient){
-    this.users = USER_DATA;
+    // this.users = USER_DATA;
     // this.httpClient.get("assets/model/user-data.json")
     //   .subscribe(
     //     (response) => {console.log(response)},
@@ -22,6 +22,7 @@ export class DataService{
 
   getData(){
     // return this.users.splice(0);
-    return this.httpClient.get("assets/model/user-data.json");
+    // return this.httpClient.get("assets/model/user-data.json");
+    return this.httpClient.get<User[]>("https://new-cnx.firebaseio.com/userdata.json");
   }
 }

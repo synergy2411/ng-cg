@@ -32,7 +32,8 @@ export class UserComponent implements OnChanges, OnInit, DoCheck, AfterContentIn
   ngOnInit() {
     // this.users = USER_DATA;
     this.dataService.getData().subscribe(
-      response => this.users = <User[]>response['userdata']
+      // response => this.users = <User[]>response['userdata']
+      response => this.users = response 
       )
   }
   ngDoCheck() {
