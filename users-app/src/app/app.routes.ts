@@ -33,7 +33,7 @@ export const APP_ROUTES: Routes = [{
   path : "product",
   component : ProductComponent,
   children: [{
-    path : "overview",
+    path : "overview/:id/:category",
     component : OverviewComponent
   },{
     path : "spec",
@@ -46,5 +46,5 @@ export const APP_ROUTES: Routes = [{
 }]
 
 
-// http://localhost:4200/product/overview
-// http://localhost:4200/product/spec
+// http://localhost:4200/product/overview/3/mobile
+// http://localhost:4200/product/spec?name=iphone
