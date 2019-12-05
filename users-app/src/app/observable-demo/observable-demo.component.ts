@@ -35,7 +35,10 @@ export class ObservableDemoComponent {
 
   onSubscribe(){
     this.subscriptionObs = this.observableData.subscribe(
-      response => this.packages.push(response),
+      response => {
+        this.packages.push(response);
+        debugger;
+      },
       err => console.log(err),
       () => console.log("Completed")
     )

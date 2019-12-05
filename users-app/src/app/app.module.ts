@@ -23,6 +23,9 @@ import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
+import { AuthService } from './services/auth.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 
@@ -50,9 +53,13 @@ import { SpecificationComponent } from './product/specification/specification.co
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(APP_ROUTES),
-    EmployeeModule
+    EmployeeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [      // services
+    AuthService,
     {
       provide : HTTP_INTERCEPTORS,
       useClass : AuthInterceptorService,

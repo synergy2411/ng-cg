@@ -1,0 +1,92 @@
+{
+  "configVersion": 1,
+  "timestamp": 1575537290214,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/5-es2015.f08112a95a659879e257.js",
+        "/5-es5.f08112a95a659879e257.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.e0360e4206fa16469be7.js",
+        "/main-es5.e0360e4206fa16469be7.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.2987770fde9daa1d8a2e.js",
+        "/polyfills-es5.ef4b1e1fc703b3ff76e3.js",
+        "/runtime-es2015.778b42ff883d7dcffde5.js",
+        "/runtime-es5.778b42ff883d7dcffde5.js",
+        "/styles.559493eace1fe5f11d8d.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png",
+        "/assets/images/bill.jpg",
+        "/assets/images/steve.png",
+        "/assets/images/tim.jpg",
+        "/assets/model/user-data.json"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/5-es2015.f08112a95a659879e257.js": "503715925608cac5f7776dced2cdce261714c042",
+    "/5-es5.f08112a95a659879e257.js": "bb9d3c8136ecdfd938a16c5decc74ff1f81e1539",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/assets/images/bill.jpg": "c1adcde911bcfce35127b50b52cacde051dceb93",
+    "/assets/images/steve.png": "086a596ec93b7ce997e9588bff1a4222ba7abcd0",
+    "/assets/images/tim.jpg": "14231737b095bf91c591280f386ef41c3b5d3104",
+    "/assets/model/user-data.json": "44371a4a43c81f1f0bb31f7bdcdef935c1148b1e",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "516fe03bc1aab845f1a2101a73c2cf1decac8879",
+    "/main-es2015.e0360e4206fa16469be7.js": "9e73b6c754b04e97313bacf7b4aed0fdd14afc0d",
+    "/main-es5.e0360e4206fa16469be7.js": "4e9051c4d8188b716721e24a6861c145ee50d49c",
+    "/manifest.webmanifest": "56c330d7ceb6e236b96e50fb1afd89376e59de51",
+    "/polyfills-es2015.2987770fde9daa1d8a2e.js": "cf5cbfa9134716054fb479ab21362146cdf1f2ff",
+    "/polyfills-es5.ef4b1e1fc703b3ff76e3.js": "9ceb13edd4b10268f661814868dadb2b284f9745",
+    "/runtime-es2015.778b42ff883d7dcffde5.js": "2751740787db6fe81c31c95a3e886284159971e1",
+    "/runtime-es5.778b42ff883d7dcffde5.js": "298711b0ca26d26ae6a8ac80b09358244525b3a7",
+    "/styles.559493eace1fe5f11d8d.css": "639f6a820764f51c75638a422c0bc18a950300ef"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
