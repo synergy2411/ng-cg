@@ -3,6 +3,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { EmployeeModule } from './employee/employee.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -22,6 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 import { OverviewComponent } from './product/overview/overview.component';
 import { SpecificationComponent } from './product/specification/specification.component';
+
 
 
 @NgModule({
@@ -47,9 +49,10 @@ import { SpecificationComponent } from './product/specification/specification.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    EmployeeModule
   ],
-  providers: [
+  providers: [      // services
     {
       provide : HTTP_INTERCEPTORS,
       useClass : AuthInterceptorService,
@@ -59,7 +62,7 @@ import { SpecificationComponent } from './product/specification/specification.co
       useClass : LoggerInterceptorService,
       multi : true
     }
-  ],          // services
-  bootstrap: [AppComponent]         //
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
