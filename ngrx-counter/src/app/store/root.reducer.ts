@@ -11,6 +11,7 @@ export function rootReducer(state = initialState, action : counterActions.Action
     case counterActions.DECREMENT: return { counter : state.counter - 1}
     case counterActions.ADD_COUNTER: return { counter : state.counter + action.payload}
     case counterActions.SUBSTRACT_COUNTER: return { counter : state.counter - action.payload}
+    case counterActions.MULTIPLY: return { counter : state.counter * action.payload}
     default: return state;
   }
 }

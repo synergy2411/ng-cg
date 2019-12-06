@@ -37,4 +37,8 @@ export class AppComponent implements OnInit {
    onSubstract(num : number){
      this.store.dispatch(new counterActions.SubstractCounter(num));
    }
+
+   onMultiply(num : number){
+     this.store.dispatch(new counterActions.Multiply(num));
+   }
 }
