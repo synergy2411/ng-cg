@@ -1,3 +1,31 @@
 <p>
   Hello {{user.name}}!
 </p>
+<hr>
+
+<h1>XSS Demo</h1>
+
+<p> Interpolated Value : {{ htmlSnippets }}</p>
+
+<br>
+<p [innerHTML]="htmlSnippets"></p>
+
+<hr>
+<h1>Angular Security Bypass</h1>
+
+<a [href]="dangerUrl">Danger URL</a> <br>
+<a [href]="safeUrl">Safe URL</a>
+<hr>
+
+
+<button (click)="onAddNew()">New Todo</button>
+<button (click) = "onNewArray()">New Array</button>
+<ul>
+  <li *ngFor="let todo of todos; trackBy : trackFunc">
+    {{ todo.label}}
+  </li>
+</ul>
+
+<hr>
+
+Add :  {{ 23 + 34}}
